@@ -1,0 +1,8 @@
+1) Mongo Compass
+2) Kucamo url mongodb://localhost:27017/
+3) Create Database
+4) Database Name: KlubKorisnici
+5) Collection Name: korisniks
+6) Create database :)
+7) Klik na 'korisniks' -> import data(json tip) i selektovati skriptni fajl.
+8) Da bi radili NodeJS Apiji potrebno je u VisualCode-u otvoriti terminal i ukucati npm start

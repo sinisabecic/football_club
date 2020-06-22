@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Visual Studio Code.
- * User: sinisa
+ * User: nikola
  * Date: 11.6.2020.
  * Time: 12.08
  */
@@ -18,6 +18,7 @@ $email = $_POST['edit_email'];
 $password = $_POST['edit_password'];
 $admin = $_POST['edit_admin'];
 
+// Za Admin checkbox
 if (isset($_POST['edit_admin'])) {
     $admin = "1";
 } else {

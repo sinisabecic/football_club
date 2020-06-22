@@ -33,7 +33,7 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                     $user_id = $_GET['id'];
                 }
 
-            $query = "SELECT * FROM userspass WHERE id=$user_id";
+            $query = 'SELECT * FROM userspass WHERE id="'.$user_id.'" ';
             $select = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_assoc($select)) {
@@ -44,10 +44,10 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                 $is_admin = $row['is_admin']; ?>
 
                 <form action="functions/user/edit-user.php" method="post">
-
                     <div class="input-group">
-                        <span class="input-group-addon">Id</span>
-                        <input type="text" name="id" class="form-control"
+                        <span class="input-group-addon" for="">ID (MongoDB ID): </span>
+                        <span class="input-group-addon"> <?php echo $id; ?></span>
+                        <input type="hidden" name="id" class="form-control"
                             value="<?php echo $id; ?>">
                     </div>
                     <br>

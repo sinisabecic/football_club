@@ -43,17 +43,37 @@ $user = new UserModel();
                 <table class="table table-bordered table-hover bg-siva">
                     <?php
             if (sizeof($user->get_users()) == 0) {
-            } else {
-                echo '<tr><th>Korisničko ime</th><th>E-mail</th><th>Admin</th><th>Akcija</th></tr>';
+            } else { ?>
+                    <tr>
+                        <th>ID</th>
+                        <th>Korisničko ime</th>
+                        <th>E-mail</th>
+                        <th>Admin</th>
+                        <th>Akcija</th>
+                    </tr>
+                    <?php
                 for ($i = 0; $i<sizeof($user->get_users()); $i++) {
-                    $users = $user->get_users();
-                    echo '<tr><td>'.$users[$i]['username'].'</td><td>'.$users[$i]['email'].'</td><td>'.$users[$i]['is_admin'].'</td><td>
-                        <button class="btn btn-primary btn-xs" onclick="deleteUser('.$users[$i]['id'].')">Ukloni</button>
-                        <a href="/admin/edit_user.php?id='.$users[$i]['id'].'" class="bijela">
-                        <button class="btn bg-plava w-700 btn-xs">Izmijeni</button></td></tr>
-                        </a>';
+                    $users = $user->get_users(); ?>
+                    <tr>
+                        <td><?php echo $users[$i]['id']; ?>
+                        </td>
+                        <td><?php echo $users[$i]['username']; ?>
+                        </td>
+                        <td><?php echo $users[$i]['email']; ?>
+                        </td>
+                        <td><?php echo $users[$i]['is_admin']; ?>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-xs"
+                                onclick="deleteUser('<?php echo $users[$i]['id']; ?>')">Ukloni</button>
+                            <a href="/admin/edit_user.php?id=<?php echo $users[$i]['id']; ?>"
+                                class="bijela">
+                                <button class="btn bg-plava w-700 btn-xs">Izmijeni</button></td>
+                    </tr>
+                    </a>
+                    <?php
                 }
-            } ?>
+                    } ?>
                 </table>
             </div>
         </div>
