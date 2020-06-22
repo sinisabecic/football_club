@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+@viewport {
+  zoom: 1;
+  width: extend-to-zoom;
+}
+@-ms-viewport {
+  width: extend-to-zoom;
+  zoom: 1;
+}
+
+* {
+  font-family: "Rajdhani", sans-serif;
+}
+
+div.embed {
+  border-radius: 10px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f0f2f5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rajdhani", sans-serif;
+}
+h2 {
+  color: #7a2739;
+}
+.fs-table-item {
+  color: #23334d;
+}
+
+.w-600 {
+  font-weight: 600;
+}
+.w-700 {
+  font-weight: 700;
+}
+.radius10 {
+  border-radius: 10px;
+}
+.radius6 {
+  border-radius: 6px;
+}
+.bijela {
+  color: #fff;
+}
+
+.bordo {
+  color: #7a2739;
+}
+.plava {
+  color: #59b3e4;
+}
+.siva {
+  color: #333;
+}
+.siva2 {
+  color: #65676b;
+}
+.zuta {
+  color: #f9d82c;
+}
+.bijela {
+  color: #fff;
+}
+
+.bg-bordo {
+  background: #7a2739;
+}
+.bg-plava {
+  background: #59b3e4;
+}
+.bg-siva {
+  background: #333;
+}
+.bg-siva2 {
+  background: #e4e6eb;
+}
+.bg-zuta {
+  background: #f9d82c;
+}
+.bg-zuta2 {
+  background: #fb1;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #f9d82c;
+  background-color: #7a2739;
+  transition: 0.3s;
+}
+.navbar-inverse .navbar-collapse {
+  background-color: #7a2739;
+}
+
+.nav-top {
+  background-color: #59b3e4;
+}
+.slogan h4 {
+  font-weight: 700;
+  color: #7a2739;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+.nav-down {
+  background-color: #7a2739;
+  margin-top: 32px;
+  -webkit-box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Skrolovanje */
+nav.nav-scroll {
+  transition: all 0.3s ease-out 0s;
+  margin-top: 0;
+  height: 0;
+  border: none;
+}
+nav.nav-scroll .logo {
+  transition: 0.5s;
+  width: 17%;
+  margin-top: -16px;
+}
+/* Uklanjanje gornjeg navbara */
+nav.nav-scroll .nav-top,
+nav.nav-scroll .slogan {
+  display: none;
+}
+/* END */
+
+.logo {
+  width: 25%;
+  margin-top: -40px;
+}
+.hr {
+  color: #7a2739;
+  border: 2px solid #7a2739;
+  border-radius: 10px;
+}
+.hr-siva {
+  color: #333333;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+.hr-siva2 {
+  color: #65676b;
+  border: 2px solid #65676b;
+  border-radius: 10px;
+}
+
+.big-icon {
+  font-size: 3em;
+}
+
+.big-font {
+  font-size: 2em;
+}
+
+.btn-primary {
+  background-color: #7a2739;
+  color: #fff;
+  border-color: #7a2739;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background-color: #59b3e4;
+  transition: 0.3s;
+  color: #7a2739;
+  border-color: #59b3e4;
+}
+.bg-danger {
+  background-color: #7a2739;
+  border-radius: 10px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: 700px;
+}
+
+.carousel-caption {
+  bottom: 100%;
+  bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: black;
+  opacity: 80%;
+  left: 0;
+  right: 0;
+  height: 140px;
+}
+.carousel-caption .btn {
+  display: none;
+}
+
+.post-card {
+  border-radius: 10px;
+  background: #f0f2f5;
+  border: none;
+}
+.post-card h3 {
+  font-weight: 600;
+  color: #7a2739;
+}
+
+.post-card p {
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #333;
+}
+.post-card img {
+  border-radius: 10px 10px 0 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.caption a h3 {
+  font-weight: 700;
+}
+.caption a h3:hover {
+  color: #333;
+}
+
+.stats {
+  -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.bs-component {
+  -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  margin-top: 75px;
+  background: #7a2739;
+}
+footer a {
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #f9d82c;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.bold-zuta {
+  color: #f9d82c;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+.futer-opis p {
+  letter-spacing: 1.2px;
+  font-size: 14px;
+}
+.futer-opis li a {
+  letter-spacing: 1.2px;
+  font-size: 14px;
+}
+.soc-web a {
+  margin-right: 10px;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 991px) {
+}
+@media (min-width: 768px) and (max-width: 990px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 500px) {
+  .navbar-brand > img {
+    width: 15%;
+    margin-top: -65px;
+  }
+  nav.nav-scroll .logo {
+    width: 15%;
+    margin-top: -65px;
+  }
+
+  a.navbar-brand {
+    margin-bottom: -60px;
+  }
+  .navbar-inverse .navbar-toggle {
+    margin-right: 33px;
+  }
+  .slogan {
+    margin-right: 18px;
+  }
+  .r-statistika {
+    text-align: center;
+    font-size: 5.8vh;
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    display: block;
+    height: 410px;
+  }
+
+  .carousel-caption {
+    bottom: 100%;
+    bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: black;
+    opacity: 80%;
+    left: 0;
+    right: 0;
+    height: 140px;
+  }
+  .carousel-caption h1 {
+    font-size: 4.5vh;
+  }
+
+  .w-ham,
+  .soc-web {
+    margin-top: 50px;
+  }
+  .futer-opis p {
+    letter-spacing: 0.5px;
+    font-size: 14px;
+  }
+  .forma {
+    margin-top: 50px;
+  }
+  .naredni-mec {
+    margin-top: -23px;
+  }
+  .statistika {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
