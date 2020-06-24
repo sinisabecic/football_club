@@ -2,7 +2,7 @@
 
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 15.17
  */
@@ -70,7 +70,7 @@ class CommentsModel
             blog.title as comments_blog_title, 
             userspass.username AS comments_username FROM blog_comments 
             INNER JOIN userspass ON blog_comments.user_id = userspass.id
-            inner join blog on blog_comments.blog_id = blog.id
+            inner join blog on blog_comments.blog_id = blog.b_id
             order by blog_comments.`timestamp` DESC';
         $result = mysqli_query($this->db, $string);
 
@@ -85,7 +85,7 @@ blog_comments.timestamp AS comments_timestamp,
 blog.title as comments_blog_title, 
 userspass.username AS comments_username FROM blog_comments 
 INNER JOIN userspass ON blog_comments.user_id = userspass.id
-inner join blog on blog_comments.blog_id = blog.id WHERE blog_comments.odobren = 1
+inner join blog on blog_comments.blog_id = blog.b_id WHERE blog_comments.odobren = 1
 order by blog_comments.`timestamp` DESC';
         $result = mysqli_query($this->db, $string);
 
@@ -100,7 +100,7 @@ blog_comments.timestamp AS comments_timestamp,
 blog.title as comments_blog_title, 
 userspass.username AS comments_username FROM blog_comments 
 INNER JOIN userspass ON blog_comments.user_id = userspass.id
-inner join blog on blog_comments.blog_id = blog.id WHERE blog_comments.odobren = 0
+inner join blog on blog_comments.blog_id = blog.b_id WHERE blog_comments.odobren = 0
 order by blog_comments.`timestamp` DESC';
         $result = mysqli_query($this->db, $string);
 
@@ -135,9 +135,13 @@ order by blog_comments.`timestamp` DESC';
      * @param $parent
      * @return bool
      */
-    public function newComment($user_id, $blog_id, $content, $timestamp, $parent)
+    public function newComment($user_id, $post_id, $content, $timestamp, $parent)
     {
-        $string = 'INSERT INTO blog_comments(id, user_id, blog_id, content, timestamp, parent, odobren) VALUES (NULL, (SELECT userspass.id FROM userspass WHERE userspass.id=' . $user_id . '), (SELECT blog.id FROM blog WHERE blog.id=' . $blog_id . '), "' . $content . '", NOW(), ' . $parent . ', 0)';
+        $string = "INSERT INTO blog_comments(id, user_id, blog_id, content, timestamp, parent, odobren)
+        VALUES (NULL,
+                (SELECT userspass.id FROM userspass WHERE userspass.id='$user_id'),
+                (SELECT blog.b_id FROM blog WHERE blog.b_id='$post_id'),
+                '$content', NOW(), '$parent', 0)";
         $result = mysqli_query($this->db, $string);
 
         return $result;
@@ -157,17 +161,10 @@ order by blog_comments.`timestamp` DESC';
                     $this->getComments($row);
                 }
             } else {
-                echo '<h5>No comments available for this post!</h5>';
+                echo '<h5 class="bordo">No comments available for this post!</h5>';
             }
         } else {
-            echo '<h5>Could not fetch comments for this post!</h5>';
+            echo '<h5 class="bordo">Could not fetch comments for this post!</h5>';
         }
-    }
-
-    public function delete_comment($id)
-    {
-        $string = 'delete from blog_comments where id="'.$id.'"';
-        $result = mysqli_query($this->db, $string);
-        return $result;
     }
 }

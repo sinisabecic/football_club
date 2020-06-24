@@ -62,9 +62,8 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
                                 <h4 class="modal-title">Novi post</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="functions/admin/new_post.php" method="post" enctype="multipart/form-data">
+                                <form action="functions/blog/new_post.php" method="post" enctype="multipart/form-data">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
                                         <span class="input-group-addon">Naslov</span>
                                         <input type="text" name="title" id="title" class="form-control">
                                     </div>

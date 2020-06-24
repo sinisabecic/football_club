@@ -53,7 +53,7 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                 <form action="functions/player/edit-player.php" method="post">
 
                     <input type="hidden" name="id" class="form-control"
-                        value="<?php echo $id; ?>">
+                        value="<?php echo $player_id; ?>">
 
                     <div class="input-group">
                         <span class="input-group-addon"> Ime</span>
@@ -78,7 +78,8 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                     <div class="input-group">
                         <span class="input-group-addon">Pozicija u timu</span>
                         <select name="pozicija" id="pozicija" class="form-control">
-                            <option value=""><?php echo $pozicija; ?>
+                            <option value="">
+                                <?php echo $pozicija; ?>
                             </option>
                             <option value="gk">GK (golman)</option>
                             <option value="sw">SW (libero)</option>

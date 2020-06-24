@@ -43,11 +43,10 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
                             <?php
         $lista_komentara = $comment->getAllCommentsForAdmin();
     if ($lista_komentara) {
+        echo '<tr><th>Korisnik</th><th>Objava</th><th>Komentar</th><th>Datum</th><th>Ukloni</th>';
         for ($i = 0; $i < sizeof($lista_komentara); $i++) {
             $lista=$comment->getAllCommentsForAdmin();
-            echo '<tr><th>Korisnik</th><th>Objava</th><th>Komentar</th><th>Datum</th>
-                <th>Akcija</th>
-                <tr>
+            echo '<tr>
                     <td>'.$lista[$i]['comments_username'].'</td>
                     <td>'.$lista[$i]['comments_blog_title'].'</td>
                     <td>'.$lista[$i]['comments_content'].'</td>

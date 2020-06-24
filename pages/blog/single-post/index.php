@@ -17,6 +17,8 @@ $sp_username = $post[0]['post_username'];
 $date_temp = new DateTime($post[0]['post_timestamp']);
 $sp_timestamp = date_format($date_temp, 'r');
 
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
+
 ?>
 
 <!DOCTYPE html>
@@ -98,22 +100,29 @@ $sp_timestamp = date_format($date_temp, 'r');
                     <div id="respond">
                         <div class="well">
                             <h4>Ostavite komentar:</h4>
-                            <!--                                                            <form id="commentform" class="margin-t" method="post">-->
-                            <div class="form-group">
-                                <input type="hidden" name="user_id" id="user_id"
-                                    value="<?php echo $_SESSION['fk_id']; ?>">
-                                <input type="hidden" name="post_id" id="post_id"
-                                    value="<?php echo $post_id; ?>">
-                                <input type="hidden" name="timestamp" id="timestamp"
-                                    value="<?php echo $submit_date; ?>">
-                                <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
-                                <input type="hidden" name="parent_id" id="parent_id" value="0" />
-                            </div>
-                            <input type="submit" name="submit_comment" id="submit-comm" value="Pošalji komentar"
-                                class="form-control btn btn-primary" />
-                            <!--                                                            </form>-->
+                            <form action="functions/blog/comment.php" id="commentform" class="margin-t" method="post">
+                                <div class="form-group">
+                                    <input type="hidden" name="user_id" id="user_id"
+                                        value="<?php echo $_SESSION['fk_id']; ?>">
+
+                                    <?php
+                                            if (isset($_GET['post'])) {
+                                                $blog_id = $_GET['post'];
+                                            } ?>
+                                    <input type="hidden" name="blog_id" id="post_id"
+                                        value="<?php echo $blog_id; ?>">
+
+                                    <input type="hidden" name="timestamp" id="timestamp"
+                                        value="<?php echo $submit_date; ?>">
+                                    <textarea name="content" id="comment" class="form-control" rows="3"></textarea>
+                                    <input type="hidden" name="parent_id" id="parent_id" value="0" />
+                                </div>
+                                <input type="submit" name="submit_comment" id="submit-comm" value="Pošalji komentar"
+                                    class="form-control btn btn-primary" />
+                                <!--                                                            </form>-->
                         </div>
                     </div>
+
                     <?php
 //                    if(isset($_POST['submit'])){
 //                        $parent_id = isset($_POST['parent_id']) ? $_POST['parent_id'] : 0;

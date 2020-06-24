@@ -44,14 +44,15 @@ class Player
 
     public function change_all($id, $ime, $prezime, $datum_rodjenja, $pozicija, $broj_dresa, $tim_id)
     {
-        $string = 'update fudbaler set 
-                    ime="'.$ime.'", 
-                    prezime="'.$prezime.'", 
-                    datum_rodjenja="'.$datum_rodjenja.'", 
-                    pozicija="'.$pozicija.'",
-                    broj_dresa="'.$broj_dresa.'",
-                    tim_id="'.$tim_id.'"  
-                    where id="'.$id.'"';
+        $string = "update fudbaler set 
+                    ime='$ime', 
+                    prezime='$prezime', 
+                    datum_rodjenja='$datum_rodjenja', 
+                    pozicija='$pozicija',
+                    broj_dresa='$broj_dresa',
+                    tim_id='$tim_id'
+                    where id='$id' ";
+
         $result = mysqli_query($this->db, $string);
         return $result;
     }

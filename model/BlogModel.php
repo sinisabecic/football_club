@@ -2,7 +2,7 @@
 
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 14.36
  */
@@ -10,9 +10,9 @@ class BlogModel
 {
     /**
      * @var mysqli
-     */
+    */
     public $db;
-
+    
     /**
      * BlogModel constructor.
      */
@@ -25,18 +25,29 @@ class BlogModel
         }
     }
 
+
     public function newPost($data, $user_id, $image, $title)
     {
-        $string = 'INSERT INTO blog(id, user_id, title, content, timestamp, image) VALUES (NULL, (SELECT id FROM userspass WHERE id="' . $user_id . '"), "' . $title . '", "' . $data . '", now(), "' . $image . '")';
+        $string = 'INSERT INTO blog(b_id, user_id, title, content, timestamp, image) 
+        VALUES 
+            (NULL, 
+            (SELECT u.id FROM userspass u WHERE u.id="' . $user_id . '"), 
+            "' . $title . '", "' . $data . '", now(), "' . $image . '")';
 
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
         return $result;
     }
 
-    public function updatePost($post_id, $user_id, $content, $image, $title)
+    public function updatePost($post_id, $user_id, $data, $image, $title)
     {
-        $string = 'UPDATE blog SET user_id=' . $user_id . ', title="' . $title . '", content="' . $content . '", timestamp=NOW(), image="' . $image . '" WHERE id=' . $post_id;
+        $string = 'UPDATE blog b 
+                    SET b.user_id=' . $user_id . ', 
+                    b.title="' . $title . '", 
+                    b.content="' . $data . '", 
+                    b.timestamp=NOW(), 
+                    b.image="'.$image.'" 
+                    WHERE b.b_id = "'.$post_id.'" ';
 
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
@@ -53,8 +64,10 @@ class BlogModel
     // with pagination
     public function getPostsPag($limit, $offset)
     {
-        $string = 'SELECT blog.id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog
-INNER JOIN userspass ON blog.user_id = userspass.id ORDER BY post_timestamp LIMIT ' . $limit . ' OFFSET ' . $offset;
+        $string = 'SELECT blog.b_id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog
+        INNER JOIN userspass ON blog.user_id = userspass.id 
+        ORDER BY post_timestamp LIMIT ' . $limit . ' OFFSET ' . $offset;
+
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
@@ -103,8 +116,15 @@ INNER JOIN userspass ON blog.user_id = userspass.id ORDER BY post_timestamp LIMI
      */
     public function getSinglePost($id)
     {
-        $string = 'SELECT blog.id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog
-INNER JOIN userspass ON blog.user_id = userspass.id WHERE blog.id=' . $id;
+        $string = 'SELECT blog.b_id AS post_id, 
+                          blog.title AS post_title, 
+                          blog.content AS post_content, 
+                          blog.image AS post_image, 
+                          blog.timestamp AS post_timestamp, 
+                          userspass.username AS post_username 
+                          FROM blog
+                   INNER JOIN userspass ON blog.user_id = userspass.id 
+                   WHERE blog.b_id=' . $id;
 
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -115,7 +135,7 @@ INNER JOIN userspass ON blog.user_id = userspass.id WHERE blog.id=' . $id;
      */
     public function deletePost($id)
     {
-        $string = 'DELETE FROM blog WHERE blog.id=' . $id;
+        $string = 'DELETE FROM blog WHERE blog.b_id=' . $id;
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
         return true;
@@ -126,7 +146,7 @@ INNER JOIN userspass ON blog.user_id = userspass.id WHERE blog.id=' . $id;
      */
     public function getLastThree()
     {
-        $string = 'SELECT blog.id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id ORDER BY blog.timestamp DESC LIMIT 3';
+        $string = 'SELECT blog.b_id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id ORDER BY blog.timestamp DESC LIMIT 3';
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -138,7 +158,7 @@ INNER JOIN userspass ON blog.user_id = userspass.id WHERE blog.id=' . $id;
      */
     public function searchByTitle($value)
     {
-        $string = 'SELECT blog.id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id where blog.title like "%'.$value.'%" order by blog.timestamp desc';
+        $string = 'SELECT blog.b_id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id where blog.title like "%'.$value.'%" order by blog.timestamp desc';
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
         if (mysqli_num_rows($result) > 0) {
@@ -154,7 +174,7 @@ INNER JOIN userspass ON blog.user_id = userspass.id WHERE blog.id=' . $id;
      */
     public function searchByAuthor($value, $author)
     {
-        $string = 'SELECT blog.id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id where blog.title like "%'.$value.'%" and userspass.username like "%'.$author.'%" order by blog.timestamp desc';
+        $string = 'SELECT blog.b_id AS post_id, blog.title AS post_title, blog.content AS post_content, blog.image AS post_image, blog.timestamp AS post_timestamp, userspass.username AS post_username FROM blog INNER JOIN userspass ON blog.user_id = userspass.id where blog.title like "%'.$value.'%" and userspass.username like "%'.$author.'%" order by blog.timestamp desc';
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 
         if (mysqli_num_rows($result) > 0) {

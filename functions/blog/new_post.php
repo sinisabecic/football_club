@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 12.6.2020.
  * Time: 20.43
  */
@@ -40,6 +40,12 @@ if (isset($_POST['submit'])) {
             $title = $_POST['title'];
             $user_id = $_SESSION['fk_id'];
             $image = $target_file;
+            
+            // Ovo sam koristio za provjeru
+            // echo 'ID Korisnika '. $user_id. ' <br/>';
+            // echo 'Naslov '. $title. ' <br/>';
+            // echo 'Tekst '. $data. ' <br/>';
+            // echo 'Slika '. $image. ' <br/>';
 
             // upisujemo blog u bazu, pozivamo funkciju newPost iz modela, tj. klase Blog
             $post = $blog->newPost($data, $user_id, $image, $title);

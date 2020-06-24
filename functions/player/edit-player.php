@@ -28,8 +28,7 @@ $tim_id = $_POST['tim_id'];
 //     $admin = "0";
 // }
 
-
-if ($ime!='' && $prezime!='' && $datum_rodjenja!='' && $pozicija!='' && $broj_dresa!='' && $tim_id!='') {
+// if ($ime!='' && $prezime!='' && $datum_rodjenja!='' && $pozicija!='' && $broj_dresa!='' && $tim_id!='') {
     $update = $player->change_all($id, $ime, $prezime, $datum_rodjenja, $pozicija, $broj_dresa, $tim_id);
 
     if ($update) {
@@ -37,6 +36,6 @@ if ($ime!='' && $prezime!='' && $datum_rodjenja!='' && $pozicija!='' && $broj_dr
     } else {
         header('Location: http://'.BASE_URL.'/pages/register/error');
     }
-} else {
-    header('Location: http://'.BASE_URL.'/pages/register/error');
-}
+// } else {
+//     header('Location: http://'.BASE_URL.'/pages/register/error');
+// }

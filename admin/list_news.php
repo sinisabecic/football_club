@@ -40,61 +40,31 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
     for ($i = 0; $i<sizeof($blog->getPosts()); $i++) {
         $posts = $blog->getPosts();
         echo '
-                        <div class="row">
-                        <div class="col-xs-12">
-                        <div class="panel  panel-default">
-                        <div class="col-xs-2">
-                            <img src="'.$posts[$i]['image'].'" class="img-responsive" alt="">
-                            
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-xs-8">
-                        <div class="row">
-                        <div class="col-xs-12">
-                        <div class="big-font zuta" style="font-size:24px">'.$posts[$i]['title'].'</div>
-                        </div>
-                        <div class="col-xs-12 bijela">'.$blog->limit_text($blog->limitParagraphs($posts[$i]['content'], 1), 20).'</div> 
-                        </div>
-                        </div>
-                        <div class="col-xs-2">
-                        <button type="button" class="btn btn-danger" onclick="delItem('.$posts[$i]['id'].')"><i class="fa fa-trash"></i> Izbriši</button>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#'.$posts[$i]['id'].'"><i class="fa fa-pencil"></i> Izmijeni</button>
-                        <div id="'.$posts[$i]['id'].'" class="modal fade" role="dialog">
-                        <div class="modal-dialog modal-lg">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Izmijeni post</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="functions/admin/edit_post.php" method="post" enctype="multipart/form-data">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-                                        <span class="input-group-addon">Title</span>
-                                        <input type="text" name="title" id="title" class="form-control" value="'.$posts[$i]['title'].'">
-                                    </div>
-                                    <br>
-                                    <input type="hidden" id="post_id" name="post_id" value="'.$posts[$i]['id'].'">
-                                    <input type="file" name="file" id="files" />
-                                    <img id="image" />
-                                    <textarea class="textarea" id="blog_editor" name="blog_editor" placeholder="Enter text ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px;">'.$posts[$i]['content'].'</textarea>
-                                    <button type="submit" class="form-control btn btn-primary" name="submit" id="submit">Sačuvaj post</button>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-
-                        </div>
+        <div class="row">
+        <div class="col-xs-12">
+           <div class="panel  panel-default">
+              <div class="col-xs-2">
+                 <img src="'.$posts[$i]['image'].'" class="img-responsive" alt="">
+                 <div class="clearfix"></div>
+              </div>
+              <div class="col-xs-8">
+                 <div class="row">
+                    <div class="col-xs-12">
+                       <div class="big-font zuta" style="font-size:24px">'.$posts[$i]['title'].'</div>
                     </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        <br>
+                    <div class="col-xs-12 bijela">'.$blog->limit_text($blog->limitParagraphs($posts[$i]['content'], 1), 20).'</div>
+                 </div>
+              </div>
+              <div class="col-xs-2">
+                 <button type="button" class="btn btn-danger" onclick="delItem('.$posts[$i]['b_id'].')"><i class="fa fa-trash"></i> Izbriši</button>
+                 <a href="/admin/edit_post.php?id='.$posts[$i]['b_id'].'"
+                 <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> Izmijeni</button>
+                 </a>                                        
+              </div>
+           </div>
+        </div>
+     </div>
+     <br>
                         ';
     } ?>
 
