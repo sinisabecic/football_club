@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2020 at 09:24 PM
+-- Generation Time: Jun 24, 2020 at 05:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -29,21 +29,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `blog` (
-  `id` int(3) NOT NULL,
+  `b_id` int(3) NOT NULL,
   `user_id` varchar(100) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` varchar(999) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `image` text NOT NULL
+  `title` varchar(255) DEFAULT NULL,
+  `content` varchar(999) DEFAULT NULL,
+  `timestamp` timestamp NULL DEFAULT current_timestamp(),
+  `image` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `user_id`, `title`, `content`, `timestamp`, `image`) VALUES
-(1, '5ef0f7143215e62810ca7758', 'Evo problema: Vest Hem je Äuo ne, ovo bi moglo da se desi i ostalima!', '<strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<br>', '2020-06-22 18:27:00', 'dist/img/uploads/vuXo9upK_400x400.jpg'),
-(3, '5ef0f7143215e62810ca7758', 'Vest Hem Junajted â€“ poÄetak nove ere', 'U prestonici Engleske postoji mnogo veÄ‡ih klubova, ali u samom Londonu najviÅ¡e navijaÄa ima upravo fudbalski klub Vest Hem Junajted. Jedino objaÅ¡njenje je to Å¡to je fudbal nekada bio igra i zabava radniÄke, da ne zvuÄi pregrubo, â€œniÅ¾eâ€ klase stanovniÅ¡tva. Upravo oni su i osnovali ÄŒekiÄ‡are, Å¡to je najpoznatiji nadimak tima iz Njuhema u IstoÄnom Londonu. Prvo ime kluba bilo je Temz Ajronvorks F.C. a kao glavni inicijatori pominju se lokalni fudbalski sudija Dejv Tejlor i biznismen Arnold Hils.\r\n\r\n\r\nPreimenovanje se desilo 1900., a 1904. godine klub je premeÅ¡ten  na stadion Bolin Graund (ili Apton Park), na kom joÅ¡ uvek igra. Trenutni kapacitet tribina je 35,016 mesta. Pripalo im je pravo na Olimpijski stadion u Londonu, gde je trebalo da preÄ‘u posle Igara 2012., ali zbog tuÅ¾be gradskog rivala Totenhema , to nije ozvaniÄeno. 22.marta 2013. objavljeno je da je klub ipak dobio Olimpijski stadion kapaciteta 80,000 mesta , na 99 godina, a na njega Ä‡e preÄ‡i uoÄi sezon', '2020-06-22 18:27:03', 'dist/img/uploads/novi-stadion-vest-hema.jpg');
+INSERT INTO `blog` (`b_id`, `user_id`, `title`, `content`, `timestamp`, `image`) VALUES
+(1, '5ef1020b3215e62810ca775a', 'Evo problema: Vest Hem je Äuo ne, ovo bi moglo da se desi i ostalima!', '<strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<br>', '2020-06-24 01:54:10', 'dist/img/uploads/vuXo9upK_400x400.jpg'),
+(3, '5ef1020b3215e62810ca775a', 'Vest Hem Junajted â€“ poÄetak nove ere', 'U prestonici Engleske postoji mnogo veÄ‡ih klubova, ali u samom Londonu najviÅ¡e navijaÄa ima upravo fudbalski klub Vest Hem Junajted. Jedino objaÅ¡njenje je to Å¡to je fudbal nekada bio igra i zabava radniÄke, da ne zvuÄi pregrubo, â€œniÅ¾eâ€ klase stanovniÅ¡tva. Upravo oni su i osnovali ÄŒekiÄ‡are, Å¡to je najpoznatiji nadimak tima iz Njuhema u IstoÄnom Londonu. Prvo ime kluba bilo je Temz Ajronvorks F.C. a kao glavni inicijatori pominju se lokalni fudbalski sudija Dejv Tejlor i biznismen Arnold Hils.\r\n\r\n\r\nPreimenovanje se desilo 1900., a 1904. godine klub je premeÅ¡ten  na stadion Bolin Graund (ili Apton Park), na kom joÅ¡ uvek igra. Trenutni kapacitet tribina je 35,016 mesta. Pripalo im je pravo na Olimpijski stadion u Londonu, gde je trebalo da preÄ‘u posle Igara 2012., ali zbog tuÅ¾be gradskog rivala Totenhema , to nije ozvaniÄeno. 22.marta 2013. objavljeno je da je klub ipak dobio Olimpijski stadion kapaciteta 80,000 mesta , na 99 godina, a na njega Ä‡e preÄ‡i uoÄi sezon', '2020-06-24 01:54:14', 'dist/img/uploads/novi-stadion-vest-hema.jpg');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,8 @@ CREATE TABLE `blog_comments` (
 --
 
 INSERT INTO `blog_comments` (`id`, `user_id`, `blog_id`, `content`, `timestamp`, `parent`, `odobren`) VALUES
-(1, '1', 1, 'Svaka cast', '2019-04-16 18:56:30', '0', 1);
+(1, '5ef1020b3215e62810ca775a', 1, 'Svaka cast', '2020-06-24 00:52:50', '0', 1),
+(2, '5ef1020b3215e62810ca775a', 3, 'aaaaaaaaaaaaaaaaaaaaaaa', '2020-06-24 15:10:29', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -89,10 +90,8 @@ CREATE TABLE `fudbaler` (
 --
 
 INSERT INTO `fudbaler` (`id`, `ime`, `prezime`, `datum_rodjenja`, `pozicija`, `broj_dresa`, `tim_id`) VALUES
-(1, 'Sasa', 'Ilic', '1.1.1994', 'amf', 22, 1),
-(2, 'Ivan', 'Obradovic', '1.1.1984', 'lb', 30, 1),
-(3, 'Vladimir', 'Stojkovic', '1.2.1988', 'gk', 88, 1),
-(4, 'Darko', 'Brasanac', '-1.-1.1994', 'cmf', 8, 1);
+(3, 'Vladimir', 'Stojkovic', '1.2.1988', 'rwf', 7, 1),
+(5, 'Antonio', 'Valencia', '1.3.1999', 'ss', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -209,7 +208,8 @@ CREATE TABLE `tim` (
 
 INSERT INTO `tim` (`id`, `ime_tima`, `osnovan`, `is_me`) VALUES
 (1, 'West Ham', '1895', '1'),
-(3, 'Celzi', '1905', '0');
+(3, 'Celzi', '1905', '0'),
+(4, 'Arsenal', '1.3.55555', '0');
 
 -- --------------------------------------------------------
 
@@ -230,7 +230,8 @@ CREATE TABLE `userspass` (
 --
 
 INSERT INTO `userspass` (`id`, `username`, `email`, `password`, `is_admin`) VALUES
-('5ef0f7143215e62810ca7758', 'admin', 'admin1', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1');
+('5ef1020b3215e62810ca775a', 'admin', 'admin1', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1'),
+('5ef2ba0383673531909131d7', 'sinisa', 'siki.pfk@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '');
 
 -- --------------------------------------------------------
 
@@ -265,7 +266,7 @@ INSERT INTO `utakmica` (`id`, `id_kola`, `domacin_id`, `gost_id`, `rezultat_doma
 -- Indexes for table `blog`
 --
 ALTER TABLE `blog`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`b_id`);
 
 --
 -- Indexes for table `blog_comments`
@@ -326,19 +327,19 @@ ALTER TABLE `utakmica`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `b_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `blog_comments`
 --
 ALTER TABLE `blog_comments`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fudbaler`
 --
 ALTER TABLE `fudbaler`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kolo`
@@ -362,7 +363,7 @@ ALTER TABLE `statistika`
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `utakmica`
