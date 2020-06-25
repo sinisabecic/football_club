@@ -45,9 +45,7 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
             <!-- /.col-lg-12 -->
         </div>
 
-
-
-        <?php
+<?php
     require '../model/BlogModel.php';
     $blog = new BlogModel(); ?>
 
