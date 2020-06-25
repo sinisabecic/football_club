@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2020 at 05:22 PM
+-- Generation Time: Jun 25, 2020 at 02:21 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -43,7 +43,8 @@ CREATE TABLE `blog` (
 
 INSERT INTO `blog` (`b_id`, `user_id`, `title`, `content`, `timestamp`, `image`) VALUES
 (1, '5ef1020b3215e62810ca775a', 'Evo problema: Vest Hem je Äuo ne, ovo bi moglo da se desi i ostalima!', '<strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<br>', '2020-06-24 01:54:10', 'dist/img/uploads/vuXo9upK_400x400.jpg'),
-(3, '5ef1020b3215e62810ca775a', 'Vest Hem Junajted â€“ poÄetak nove ere', 'U prestonici Engleske postoji mnogo veÄ‡ih klubova, ali u samom Londonu najviÅ¡e navijaÄa ima upravo fudbalski klub Vest Hem Junajted. Jedino objaÅ¡njenje je to Å¡to je fudbal nekada bio igra i zabava radniÄke, da ne zvuÄi pregrubo, â€œniÅ¾eâ€ klase stanovniÅ¡tva. Upravo oni su i osnovali ÄŒekiÄ‡are, Å¡to je najpoznatiji nadimak tima iz Njuhema u IstoÄnom Londonu. Prvo ime kluba bilo je Temz Ajronvorks F.C. a kao glavni inicijatori pominju se lokalni fudbalski sudija Dejv Tejlor i biznismen Arnold Hils.\r\n\r\n\r\nPreimenovanje se desilo 1900., a 1904. godine klub je premeÅ¡ten  na stadion Bolin Graund (ili Apton Park), na kom joÅ¡ uvek igra. Trenutni kapacitet tribina je 35,016 mesta. Pripalo im je pravo na Olimpijski stadion u Londonu, gde je trebalo da preÄ‘u posle Igara 2012., ali zbog tuÅ¾be gradskog rivala Totenhema , to nije ozvaniÄeno. 22.marta 2013. objavljeno je da je klub ipak dobio Olimpijski stadion kapaciteta 80,000 mesta , na 99 godina, a na njega Ä‡e preÄ‡i uoÄi sezon', '2020-06-24 01:54:14', 'dist/img/uploads/novi-stadion-vest-hema.jpg');
+(3, '5ef1020b3215e62810ca775a', 'Vest Hem Junajted â€“ poÄetak nove ere', 'U prestonici Engleske postoji mnogo veÄ‡ih klubova, ali u samom Londonu najviÅ¡e navijaÄa ima upravo fudbalski klub Vest Hem Junajted. Jedino objaÅ¡njenje je to Å¡to je fudbal nekada bio igra i zabava radniÄke, da ne zvuÄi pregrubo, â€œniÅ¾eâ€ klase stanovniÅ¡tva. Upravo oni su i osnovali ÄŒekiÄ‡are, Å¡to je najpoznatiji nadimak tima iz Njuhema u IstoÄnom Londonu. Prvo ime kluba bilo je Temz Ajronvorks F.C. a kao glavni inicijatori pominju se lokalni fudbalski sudija Dejv Tejlor i biznismen Arnold Hils.\r\n\r\n\r\nPreimenovanje se desilo 1900., a 1904. godine klub je premeÅ¡ten  na stadion Bolin Graund (ili Apton Park), na kom joÅ¡ uvek igra. Trenutni kapacitet tribina je 35,016 mesta. Pripalo im je pravo na Olimpijski stadion u Londonu, gde je trebalo da preÄ‘u posle Igara 2012., ali zbog tuÅ¾be gradskog rivala Totenhema , to nije ozvaniÄeno. 22.marta 2013. objavljeno je da je klub ipak dobio Olimpijski stadion kapaciteta 80,000 mesta , na 99 godina, a na njega Ä‡e preÄ‡i uoÄi sezon', '2020-06-24 23:53:04', 'dist/img/uploads/FB_IMG_1568461371420.jpg'),
+(7, '5ef1020b3215e62810ca775a', 'Illustration-2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>', '2020-06-24 23:50:54', 'dist/img/uploads/bg-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,10 @@ CREATE TABLE `blog_comments` (
 
 INSERT INTO `blog_comments` (`id`, `user_id`, `blog_id`, `content`, `timestamp`, `parent`, `odobren`) VALUES
 (1, '5ef1020b3215e62810ca775a', 1, 'Svaka cast', '2020-06-24 00:52:50', '0', 1),
-(2, '5ef1020b3215e62810ca775a', 3, 'aaaaaaaaaaaaaaaaaaaaaaa', '2020-06-24 15:10:29', '0', 1);
+(2, '5ef1020b3215e62810ca775a', 3, 'aaaaaaaaaaaaaaaaaaaaaaa', '2020-06-24 15:10:29', '0', 1),
+(3, '5ef1020b3215e62810ca775a', 1, 'awwwwwwwwwwwwwwww', '2020-06-24 22:21:29', '0', 1),
+(4, '5ef1020b3215e62810ca775a', 1, 'aaaaaaaaaaaaaaaaaaa', '2020-06-24 22:21:46', '1', 1),
+(5, '5ef1020b3215e62810ca775a', 3, 'aaaaaaaawwwwwwwwwwwww', '2020-06-24 23:53:36', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -90,8 +94,8 @@ CREATE TABLE `fudbaler` (
 --
 
 INSERT INTO `fudbaler` (`id`, `ime`, `prezime`, `datum_rodjenja`, `pozicija`, `broj_dresa`, `tim_id`) VALUES
-(3, 'Vladimir', 'Stojkovic', '1.2.1988', 'rwf', 7, 1),
-(5, 'Antonio', 'Valencia', '1.3.1999', 'ss', 9, 1);
+(1, 'Vladimir', 'Stojkovic', '1.2.1987', 'gk', 78, 1),
+(4, 'Antonio', 'Valencia', '1.3.1999', 'ss', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -186,7 +190,6 @@ CREATE TABLE `statistika` (
 INSERT INTO `statistika` (`id`, `utakmica_id`, `fudbaler_id`, `br_golova`, `br_asistencija`, `zuti_karton`, `crveni_karton`) VALUES
 (1, 1, 1, 3, 0, 0, 0),
 (2, 1, 1, 27, 14, 5, 1),
-(3, 1, 2, 4, 5, 6, 7),
 (4, 1, 4, 7, 4, 15, 7);
 
 -- --------------------------------------------------------
@@ -230,8 +233,8 @@ CREATE TABLE `userspass` (
 --
 
 INSERT INTO `userspass` (`id`, `username`, `email`, `password`, `is_admin`) VALUES
-('5ef1020b3215e62810ca775a', 'admin', 'admin1', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1'),
-('5ef2ba0383673531909131d7', 'sinisa', 'siki.pfk@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '');
+('5ef1020b3215e62810ca775a', 'admin', 'admin@mail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1'),
+('5ef3ed2823f7750320b4d63a', 'slavica', 'slavica@mail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1');
 
 -- --------------------------------------------------------
 
@@ -327,13 +330,13 @@ ALTER TABLE `utakmica`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `b_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `b_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `blog_comments`
 --
 ALTER TABLE `blog_comments`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `fudbaler`

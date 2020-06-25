@@ -1,2 +1,2 @@
-{"_id":{"$oid":"5ef1020b3215e62810ca775a"},"username":"admin","email":"admin1","password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5","is_admin":"1","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5ef2ba0383673531909131d7"},"username":"sinisa","email":"siki.pfk@gmail.com","password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5","is_admin":"0","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5ef1020b3215e62810ca775a"},"username":"admin","email":"admin@mail.com","password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5","is_admin":"1","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5ef3ed2823f7750320b4d63a"},"username":"slavica","email":"slavica@mail.com","password":"5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5","is_admin":"0","__v":{"$numberInt":"0"}}

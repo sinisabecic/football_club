@@ -1,3 +1,15 @@
+<style>
+    td {
+        background: #556271;
+        color: #fff;
+        vertical-align: middle;
+    }
+
+    label {
+        color: #fff;
+        font-weight: 600;
+    }
+</style>
 <?php
 session_start();
 require '../config.php';
@@ -72,14 +84,21 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
                 <div class="well">
                     <h3 data-toggle="collapse">Lista kola
                     </h3>
-                    <table class="table table-bordered table-hover bg-siva">
+                    <table id="datatable" class="table table-hover bg-danger">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Broj kola</th>
+                                <th>Sezona</th>
+                                <th>Akcija</th>
+                            </tr>
+                        </thead>
                         <?php
             if (sizeof($round->get_all_rounds()) == 0) {
                 echo '<div class="alert alert-danger">';
                 echo 'Nema utakmica.';
                 echo '</div>';
             } else {
-                echo '<tr><th>ID</th><th>Broj kola</th><th>Sezona</th><th>Akcija</th></tr>';
                 for ($i = 0; $i < sizeof($round->get_all_rounds()); $i++) {
                     $rounds = $round->get_all_rounds();
                     $k_id = $rounds[$i]['k_id'];
@@ -106,11 +125,26 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
     </div>
 
     <script src="public/js/jquery.js"></script>
+
+
     <script src="public/js/jquery.toast.js"></script>
+    <script src="public/js/jquery.validate.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=" https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="public/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+
     <script src="bower_components/wysihtml5x/dist/wysihtml5x-toolbar.min.js"></script>
     <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+        });
+    </script>
 
     <script>
         function deleteRound(item) {

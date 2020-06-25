@@ -21,11 +21,11 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
 
 
 <div class="container" style="margin-top:115px">
-    <div class="modal-dialog modal-md">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Izmjena korisnika</h4>
+                <h4 class="modal-title">Izmjena igrača</h4>
             </div>
             <div class="modal-body">
                 <?php
@@ -78,7 +78,7 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                     <div class="input-group">
                         <span class="input-group-addon">Pozicija u timu</span>
                         <select name="pozicija" id="pozicija" class="form-control">
-                            <option value="">
+                            <option value="<?php echo $pozicija; ?>">
                                 <?php echo $pozicija; ?>
                             </option>
                             <option value="gk">GK (golman)</option>

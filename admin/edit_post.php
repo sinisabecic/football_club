@@ -21,7 +21,7 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
 
 
 <div class="container" style="margin-top:115px">
-    <div class="modal-dialog modal-md">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -59,16 +59,11 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
                     <input type="hidden" id="post_id" name="post_id"
                         value="<?php echo $id; ?>">
 
-                    <div class="form-group">
-                        <label for="image">Azuriraj sliku</label>
-                        <input type="file" class="select-chosen" name="image">
-                    </div>
-
-                    <!-- <input type="file" name="file" id="files" />
-                    <img id="image" /> -->
+                    <input type="file" name="file" id="files" />
+                    <img id="image" />
 
                     <textarea class="textarea" id="blog_editor" name="blog_editor" placeholder="Dodaj tekst..."
-                        style="width: 100%; height: 200px; font-size: 14px; line-height: 18px;">
+                        style="width: 100%; height: 200px; font-size: 16px; line-height: 18px;">
                             <?php echo $data; ?></textarea>
                     <button type="submit" class="form-control btn btn-primary" name="submit" id="submit">Sačuvaj
                         post</button>

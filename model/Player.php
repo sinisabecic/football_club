@@ -28,7 +28,14 @@ class Player
 
     public function new_player($ime, $prezime, $datum_rodjenja, $pozicija, $broj_dresa, $tim_id)
     {
-        $string = 'insert into fudbaler(id, ime, prezime, datum_rodjenja, pozicija, broj_dresa,tim_id) values(NULL, "'.$ime.'", "'.$prezime.'", "'.$datum_rodjenja.'", "'.$pozicija.'", "'.$broj_dresa.'", (select tim.id from tim where tim.id='.$tim_id.'))';
+        $string = 'insert into fudbaler(id, ime, prezime, datum_rodjenja, pozicija, broj_dresa,tim_id) 
+        values(NULL, 
+            "'.$ime.'", 
+            "'.$prezime.'", 
+            "'.$datum_rodjenja.'", 
+            "'.$pozicija.'", 
+            "'.$broj_dresa.'", 
+            (select tim.id from tim where tim.id='.$tim_id.'))';
         $result = mysqli_query($this->db, $string);
 
         return $result;

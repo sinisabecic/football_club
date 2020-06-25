@@ -41,13 +41,13 @@ class BlogModel
 
     public function updatePost($post_id, $user_id, $data, $image, $title)
     {
-        $string = 'UPDATE blog b 
-                    SET b.user_id=' . $user_id . ', 
-                    b.title="' . $title . '", 
-                    b.content="' . $data . '", 
+        $string = "UPDATE blog b 
+                    SET b.user_id='$user_id', 
+                    b.title='$title', 
+                    b.content='$data', 
                     b.timestamp=NOW(), 
-                    b.image="'.$image.'" 
-                    WHERE b.b_id = "'.$post_id.'" ';
+                    b.image='$image' 
+                    WHERE b.b_id = '$post_id' ";
 
         $result = mysqli_query($this->db, $string) or die(mysqli_connect_errno());
 

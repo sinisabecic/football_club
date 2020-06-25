@@ -1,3 +1,15 @@
+<style>
+    td {
+        background: #556271;
+        color: #fff;
+        vertical-align: middle;
+    }
+
+    label {
+        color: #fff;
+        font-weight: 600;
+    }
+</style>
 <?php
 session_start();
 require '../config.php';
@@ -40,17 +52,20 @@ $user = new UserModel();
 
         <div class="row">
             <div class="col-xs-12">
-                <table class="table table-bordered table-hover bg-siva">
-                    <?php
+                <table id="datatable" class="table table-hover bg-danger">
+                    <thead>
+                        <tr>
+                            <?php
             if (sizeof($user->get_users()) == 0) {
             } else { ?>
-                    <tr>
-                        <th>ID</th>
-                        <th>Korisničko ime</th>
-                        <th>E-mail</th>
-                        <th>Admin</th>
-                        <th>Akcija</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Korisničko ime</th>
+                            <th>E-mail</th>
+                            <th>Admin</th>
+                            <th>Akcija</th>
+                        </tr>
+                    </thead>
                     <?php
                 for ($i = 0; $i<sizeof($user->get_users()); $i++) {
                     $users = $user->get_users(); ?>
@@ -84,14 +99,27 @@ $user = new UserModel();
 
     </div>
 </div>
-
 <script src="public/js/jquery.js"></script>
+
+
 <script src="public/js/jquery.toast.js"></script>
+<script src="public/js/jquery.validate.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src=" https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+
 <script src="bower_components/wysihtml5x/dist/wysihtml5x-toolbar.min.js"></script>
 <script src="bower_components/handlebars/handlebars.min.js"></script>
 <script src="bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.min.js"></script>
 
+
+<script>
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+    });
+</script>
 <script>
     $('#blog_editor').wysihtml5({
         toolbar: {

@@ -142,6 +142,7 @@ order by blog_comments.`timestamp` DESC';
                 (SELECT userspass.id FROM userspass WHERE userspass.id='$user_id'),
                 (SELECT blog.b_id FROM blog WHERE blog.b_id='$post_id'),
                 '$content', NOW(), '$parent', 0)";
+                
         $result = mysqli_query($this->db, $string);
 
         return $result;

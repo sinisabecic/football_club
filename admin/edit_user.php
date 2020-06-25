@@ -33,7 +33,7 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                     $user_id = $_GET['id'];
                 }
 
-            $query = 'SELECT * FROM userspass WHERE id="'.$user_id.'" ';
+            $query = "SELECT * FROM userspass WHERE id='$user_id' ";
             $select = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_assoc($select)) {
@@ -75,7 +75,6 @@ $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);
                                 <input name="edit_admin" type="checkbox" aria-label="Checkbox for following text input"
                                     <?php echo($is_admin == 1 ? 'checked' : ''); ?>>
                                 <span> Admin</span><br><br>
-
                             </div>
                         </div>
                     </div>

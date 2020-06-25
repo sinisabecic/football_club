@@ -1,3 +1,16 @@
+<style>
+    td {
+        background: #556271;
+        color: #fff;
+        vertical-align: middle;
+    }
+
+    label {
+        color: #fff;
+        font-weight: 600;
+    }
+</style>
+
 <?php
 session_start();
 require '../config.php';
@@ -36,37 +49,52 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
 
         <?php
     require '../model/BlogModel.php';
-    $blog = new BlogModel();
-    for ($i = 0; $i<sizeof($blog->getPosts()); $i++) {
-        $posts = $blog->getPosts();
-        echo '
-        <div class="row">
-        <div class="col-xs-12">
-           <div class="panel  panel-default">
-              <div class="col-xs-2">
-                 <img src="'.$posts[$i]['image'].'" class="img-responsive" alt="">
-                 <div class="clearfix"></div>
-              </div>
-              <div class="col-xs-8">
-                 <div class="row">
-                    <div class="col-xs-12">
-                       <div class="big-font zuta" style="font-size:24px">'.$posts[$i]['title'].'</div>
-                    </div>
-                    <div class="col-xs-12 bijela">'.$blog->limit_text($blog->limitParagraphs($posts[$i]['content'], 1), 20).'</div>
-                 </div>
-              </div>
-              <div class="col-xs-2">
-                 <button type="button" class="btn btn-danger" onclick="delItem('.$posts[$i]['b_id'].')"><i class="fa fa-trash"></i> Izbriši</button>
-                 <a href="/admin/edit_post.php?id='.$posts[$i]['b_id'].'"
-                 <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> Izmijeni</button>
-                 </a>                                        
-              </div>
-           </div>
-        </div>
-     </div>
-     <br>
-                        ';
-    } ?>
+    $blog = new BlogModel(); ?>
+
+        <table id="datatable" class="table table-hover bg-danger">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Naziv</th>
+                    <th>Slika</th>
+                    <th>Sadržaj</th>
+                    <th>Ukloni</th>
+                    <th>Izmijeni</th>
+                </tr>
+            </thead>
+            <tbody class="bg-warning">
+                <?php
+            for ($i = 0; $i<sizeof($blog->getPosts()); $i++) {
+                $posts = $blog->getPosts(); ?>
+                <tr>
+                    <td><?php echo $posts[$i]['b_id']; ?>
+                    </td>
+                    <td><?php echo $posts[$i]['title']; ?>
+                    </td>
+                    <td>
+                        <img src="<?php echo $posts[$i]['image']; ?>"
+                            width="30%" alt="">
+                    </td>
+                    <td><?php echo $blog->limit_text($blog->limitParagraphs($posts[$i]['content'], 1), 20); ?>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger"
+                            onclick="delItem('<?php echo $posts[$i]['b_id']; ?>')"><i
+                                class="fa fa-trash"></i> Izbriši</button>
+                    </td>
+                    <td>
+                        <a
+                            href="/admin/edit_post.php?id=<?php echo $posts[$i]['b_id'] ?>">
+                            <button type="button" class="btn btn-info"><i class="fa fa-pencil"></i> Izmijeni</button>
+                        </a>
+                    </td>
+                </tr>
+                <?php
+            } ?>
+
+            </tbody>
+        </table>
+
 
 
 
@@ -74,10 +102,26 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
 </div>
 
 <script src="public/js/jquery.js"></script>
+
+
+<script src="public/js/jquery.toast.js"></script>
+<script src="public/js/jquery.validate.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src=" https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+
 <script src="bower_components/wysihtml5x/dist/wysihtml5x-toolbar.min.js"></script>
 <script src="bower_components/handlebars/handlebars.min.js"></script>
 <script src="bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+    });
+</script>
 
 <script>
     $('#blog_editor').wysihtml5({
@@ -115,11 +159,18 @@ if ($user->is_admin($_SESSION['fk_id']) == 1) {
         }
     }
 </script>
+
+<script>
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+    });
+</script>
+
 </body>
 
 </html>
 
 <?php
 } else {
-        header('Location: http://' . BASE_URL . '');
-    }
+                header('Location: http://' . BASE_URL . '');
+            }
