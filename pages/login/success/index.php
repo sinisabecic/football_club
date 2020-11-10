@@ -38,7 +38,7 @@ $stats = new StatisticsModel();
 
 <body>
 
-    <?php require '../../../partials/navigation.php';?>
+    <?php require '../../../partials/navigation.php'; ?>
 
     <div class="container-lg">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -80,29 +80,24 @@ $stats = new StatisticsModel();
                 $image = $post[$i]['post_image'];
                 $content = $blog->limit_text($blog->limitParagraphs($post[$i]['post_content'], 1), 30); ?>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail post-card hvr-hang">
-                    <a
-                        href="pages/blog/single-post/?post='<?php echo $id; ?>'">
-                        <img class="post-card-img"
-                            src="<?php echo $image; ?>"
-                            alt="..."></a>
-                    <div class="caption">
-                        <a
-                            href="pages/blog/single-post/?post='<?php echo $id; ?>'">
-                            <h3><?php echo $title; ?>
-                            </h3>
-                        </a>
-                        <p><?php echo $content ?>
-                        </p>
-                        <p><a href="pages/blog/single-post/?post='<?php echo $id; ?>'"
-                                class="btn btn-primary" role="button">Pročitaj &raquo;</a></p>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail post-card hvr-hang">
+                        <a href="pages/blog/single-post/?post='<?php echo $id; ?>'">
+                            <img class="post-card-img" src="<?php echo $image; ?>" alt="..."></a>
+                        <div class="caption">
+                            <a href="pages/blog/single-post/?post='<?php echo $id; ?>'">
+                                <h3><?php echo $title; ?>
+                                </h3>
+                            </a>
+                            <p><?php echo $content ?>
+                            </p>
+                            <p><a href="pages/blog/single-post/?post='<?php echo $id; ?>'" class="btn btn-primary" role="button">Pročitaj &raquo;</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php
             }
-                ?>
+            ?>
         </div><!-- /.row -->
     </div>
 
@@ -120,17 +115,17 @@ $stats = new StatisticsModel();
                         <h4><i class="fa fa-soccer-ball-o"></i> Lista strijelaca</h4>
                         <?php
 
-            if (sizeof($stats->lista_strelaca())==0) {
-                echo 'Nema strijelaca';
-            } else {
-                echo '<table class="table table-hover">';
-                for ($i = 0; $i < sizeof($stats->lista_strelaca()); $i++) {
-                    $stats_strijelci = $stats->lista_strelaca();
-                    echo '<tr><td>'.($i+1).'</td><td>'.$stats_strijelci[$i]['stat_ime'].' '.$stats_strijelci[$i]['stat_prezime'].'</td><td>'.$stats_strijelci[$i]['br_golova'].'</td></tr>';
-                }
-                echo '</table>';
-            }
-            ?>
+                        if (sizeof($stats->lista_strelaca()) == 0) {
+                            echo 'Nema strijelaca';
+                        } else {
+                            echo '<table class="table table-hover">';
+                            for ($i = 0; $i < sizeof($stats->lista_strelaca()); $i++) {
+                                $stats_strijelci = $stats->lista_strelaca();
+                                echo '<tr><td>' . ($i + 1) . '</td><td>' . $stats_strijelci[$i]['stat_ime'] . ' ' . $stats_strijelci[$i]['stat_prezime'] . '</td><td>' . $stats_strijelci[$i]['br_golova'] . '</td></tr>';
+                            }
+                            echo '</table>';
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-md-4 statistika">
@@ -138,17 +133,17 @@ $stats = new StatisticsModel();
                         <h4><i class="fa fa-gift"></i> Lista asistenata</h4>
                         <?php
 
-            if (sizeof($stats->lista_asistenata())==0) {
-                echo 'Nema asistenata';
-            } else {
-                echo '<table class="table table table-hover">';
-                for ($j = 0; $j < sizeof($stats->lista_asistenata()); $j++) {
-                    $stats_asistenti = $stats->lista_asistenata();
-                    echo '<tr><td>'.($j+1).'</td><td>'.$stats_asistenti[$j]['stat_ime'].' '.$stats_asistenti[$j]['stat_prezime'].'</td><td>'.$stats_asistenti[$j]['br_asistencija'].'</td></tr>';
-                }
-                echo '</table>';
-            }
-            ?>
+                        if (sizeof($stats->lista_asistenata()) == 0) {
+                            echo 'Nema asistenata';
+                        } else {
+                            echo '<table class="table table table-hover">';
+                            for ($j = 0; $j < sizeof($stats->lista_asistenata()); $j++) {
+                                $stats_asistenti = $stats->lista_asistenata();
+                                echo '<tr><td>' . ($j + 1) . '</td><td>' . $stats_asistenti[$j]['stat_ime'] . ' ' . $stats_asistenti[$j]['stat_prezime'] . '</td><td>' . $stats_asistenti[$j]['br_asistencija'] . '</td></tr>';
+                            }
+                            echo '</table>';
+                        }
+                        ?>
                     </div>
                 </div>
 
@@ -157,17 +152,17 @@ $stats = new StatisticsModel();
                         <h4><i class="fa fa-soccer-ball-o"></i> Lista utakmica</h4>
                         <?php
 
-            if (sizeof($stats->lista_utakmica())==0) {
-                echo 'Nema utakmica';
-            } else {
-                echo '<table class="table table-hover">';
-                for ($k = 0; $k < sizeof($stats->lista_utakmica()); $k++) {
-                    $stats_utakmice = $stats->lista_utakmica();
-                    echo '<tr><td>'.($k+1).'</td><td style="text-align:right;">'.$stats_utakmice[$k]['domaci_tim'].' ('.$stats_utakmice[$k]['stat_home'].')</td><td>('.$stats_utakmice[$k]['stat_guest'].') '.$stats_utakmice[$k]['gostujuci_tim'].'</td></tr>';
-                }
-                echo '</table>';
-            }
-            ?>
+                        if (sizeof($stats->lista_utakmica()) == 0) {
+                            echo 'Nema utakmica';
+                        } else {
+                            echo '<table class="table table-hover">';
+                            for ($k = 0; $k < sizeof($stats->lista_utakmica()); $k++) {
+                                $stats_utakmice = $stats->lista_utakmica();
+                                echo '<tr><td>' . ($k + 1) . '</td><td style="text-align:right;">' . $stats_utakmice[$k]['domaci_tim'] . ' (' . $stats_utakmice[$k]['stat_home'] . ')</td><td>(' . $stats_utakmice[$k]['stat_guest'] . ') ' . $stats_utakmice[$k]['gostujuci_tim'] . '</td></tr>';
+                            }
+                            echo '</table>';
+                        }
+                        ?>
                     </div>
                 </div>
 
@@ -180,7 +175,7 @@ $stats = new StatisticsModel();
         <div class="row">
             <div class="page-header">
                 <h1 class="bordo text-left bg-siva2 w-600 r-statistika"> Realna statistika<small class="siva">
-                        2019/2020
+                        2020/2021
                         godina</small></h1>
             </div>
             <div class="col-md-4">
@@ -208,8 +203,7 @@ $stats = new StatisticsModel();
             <div class="col-md-4">
                 <h3 class="bordo forma">Forma našeg tima u ligi</h3>
                 <hr class="siva2">
-                <iframe src="https://footystats.org/api/club?id=153" height="100%" width="100%"
-                    style="height:420px; width:100%;" frameborder="0"></iframe>
+                <iframe src="https://footystats.org/api/club?id=153" height="100%" width="100%" style="height:420px; width:100%;" frameborder="0"></iframe>
             </div>
 
             <div class="col-md-4 naredni-mec">
