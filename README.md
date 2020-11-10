@@ -1,6 +1,6 @@
-<p align="center"><img src="https://www.logo-designer.co/wp-content/uploads/2014/07/West-Ham-United-crest-logo-design-football.jpg" width="350" style="max-width:100%;"></p>
+# <span style="color:#7a2739;">Football Club West Ham</span>
 
-## <span style="color:#7a2739;">Football Club West Ham</span>
+<p align="center"><img src="https://www.logo-designer.co/wp-content/uploads/2014/07/West-Ham-United-crest-logo-design-football.jpg" width="350" style="max-width:100%;"></p>
 
 ## <span style="color:#0A3D62">Contents</span>
 
