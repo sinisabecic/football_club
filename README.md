@@ -1,6 +1,6 @@
-## <p align="center"><img src="https://banner2.cleanpng.com/20180721/hzh/kisspng-201617-west-ham-united-f-c-season-logo-footbal-crack-up-at-the-race-riots-5b533ff55af186.1397225215321825173725.jpg" width="350" style="max-width:100%;"></p>
+<p align="center"><img src="https://www.logo-designer.co/wp-content/uploads/2014/07/West-Ham-United-crest-logo-design-football.jpg" width="350" style="max-width:100%;"></p>
 
-## <span style="color:#7a2739">Football Club West Ham</span>
+## <span style="color:#7a2739;">Football Club West Ham</span>
 
 ## <span style="color:#0A3D62">Contents</span>
 
