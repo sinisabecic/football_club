@@ -26,11 +26,11 @@ In folder **_Baza_** there is a two **_Database_** scripts `fudbalski_klub.sql` 
 
 ## Technologies</span>
 
-| **Backend**                       | **Frontend**                           | **Databases**                                       |
-| --------------------------------- | -------------------------------------- | --------------------------------------------------- |
-| [PHP](https://php.net)            | [Bootstrap](https://getbootstrap.com/) | [MySQL](https://www.mysql.com/)                     |
-| [Node.js](https://nodejs.org/en/) | [JQuery](https://jquery.com)           | [MongoDB](https://www.mongodb.com/products/compass) |
-|                                   | [Ajax](https://php.net)                |
+| **Backend**                       | **Frontend**                                | **Databases**                                       |
+| --------------------------------- | ------------------------------------------- | --------------------------------------------------- |
+| [PHP](https://php.net)            | [Bootstrap](https://getbootstrap.com/)      | [MySQL](https://www.mysql.com/)                     |
+| [Node.js](https://nodejs.org/en/) | [JQuery](https://jquery.com)                | [MongoDB](https://www.mongodb.com/products/compass) |
+|                                   | [Ajax](https://api.jquery.com/jquery.ajax/) |
 
 ## Author Info</span>
 
