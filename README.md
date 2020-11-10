@@ -1,8 +1,10 @@
-# <span style="color:#7a2739;">Football Club West Ham</span>
+## Website of FC West Ham
 
-<p align="center"><img src="https://www.logo-designer.co/wp-content/uploads/2014/07/West-Ham-United-crest-logo-design-football.jpg" width="350" style="max-width:100%;"></p>
+## <p align="center"><img src="https://www.logo-designer.co/wp-content/uploads/2014/07/West-Ham-United-crest-logo-design-football.jpg" width="350" style="max-width:100%;"></p>
 
-## <span style="color:#0A3D62">Contents</span>
+---
+
+## Contents
 
 - [Description](#description)
 - [Screenshots](#screenshots)
@@ -10,19 +12,19 @@
 - [Technologies](#technologies)
 - [Author Info](#author-info)
 
-## <span style="color:#0A3D62">Description</span>
+## Description
 
-This is the "<b>Football Club</b>" project. This project was done in the <b>PHP</b> programming language. <b>SQL (phpMyAdmin)</b> was used for players, clubs, comments, posts and others, while <b>NoSQL (MongoDB)</b> was used to create <b>APIs</b> for users using <b>Node.js</b>.
+This is the "<b>Football Club</b>" project. This project was done in the <b>PHP</b> programming language. <b>SQL (phpMyAdmin)</b> was used for players, clubs, comments, posts and others, while <b>NoSQL (MongoDB)</b> was used to create <b>APIs</b> for users using **Node.js**.
 
-## <span style="color:#0A3D62">Screenshots</span>
+## Screenshots
 
-## <span style="color:#0A3D62">How to use</span>
+## How to use
 
 In folder **_Baza_** there is a two **_Database_** scripts `fudbalski_klub.sql` for **_MySQL_** and `mongo_fk.json` for **_MongoDB Compass_**. Navigate **_GitBash_** to folder **_NodeApi_** and in console type **`npm start`**.
 
-> **<span style="color:#B83227">Warning:</span>:** You need to have **MongoDB** installed on PC.
+> **Warning:** You need to have **_MongoDB_** installed on PC.
 
-## <span style="color:#0A3D62">Technologies</span>
+## Technologies</span>
 
 - [PHP](https://php.net)
 - [MySQL](https://www.mysql.com/)
@@ -30,7 +32,7 @@ In folder **_Baza_** there is a two **_Database_** scripts `fudbalski_klub.sql` 
 - [MongoDB](https://www.mongodb.com/)
 - [MongoDB Compass](https://www.mongodb.com/products/compass)
 
-## <span style="color:#394867">Author Info</span>
+## Author Info</span>
 
 - **Facebook** - [@sinisabecicc](https://facebook.com/sinisabecicc)
 - **Twitter** - [@sinisa\_\_b](https://twitter.com/sinisa__b)
