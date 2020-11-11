@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 12.08
  */
@@ -16,15 +17,14 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if($username!='' && $email!='' && $password!=''){
+if ($username != '' && $email != '' && $password != '') {
     $register = $user->register($username, $email, $password);
-    
-    if($register){
-        header('Location: http://'.BASE_URL.'/admin/users.php');    
-    }
-    else {
-        header('Location: http://'.BASE_URL.'/pages/register/error');
+
+    if ($register) {
+        header('Location: http://' . BASE_URL . '/admin/users.php');
+    } else {
+        header('Location: http://' . BASE_URL . '/pages/register/error');
     }
 } else {
-    header('Location: http://'.BASE_URL.'/pages/register/error');
+    header('Location: http://' . BASE_URL . '/pages/register/error');
 }

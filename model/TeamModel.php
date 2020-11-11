@@ -2,7 +2,7 @@
 
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 12.6.2020.
  * Time: 15.26
  */
@@ -36,7 +36,7 @@ class TeamModel
 
     public function new_team($name, $datum_osnivanja)
     {
-        $string = 'insert into tim set ime_tima="'.$name.'", osnovan="'.$datum_osnivanja.'", is_me=0';
+        $string = 'insert into tim set ime_tima="' . $name . '", osnovan="' . $datum_osnivanja . '", is_me=0';
         $result = mysqli_query($this->db, $string);
 
         return $result;
@@ -44,7 +44,7 @@ class TeamModel
 
     public function delete_team($id)
     {
-        $string = 'delete from tim where tim.id='.$id;
+        $string = 'delete from tim where tim.id=' . $id;
         $result = mysqli_query($this->db, $string);
 
         return $result;

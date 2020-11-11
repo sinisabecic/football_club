@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 11.02
  */
@@ -34,7 +35,7 @@ require '../../../model/UserModel.php';
 
 <body>
 
-    <?php require_once '../../../partials/navigation.php';?>
+    <?php require_once '../../../partials/navigation.php'; ?>
 
     <div class="page-holder">
         <div class="container">

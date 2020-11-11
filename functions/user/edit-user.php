@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 12.08
  */
@@ -26,14 +27,14 @@ if (isset($_POST['edit_admin'])) {
 }
 
 
-if ($username!='' && $email!='' && $password!='' && $admin!='') {
+if ($username != '' && $email != '' && $password != '' && $admin != '') {
     $change_all = $user->change_all($id, $username, $email, $password, $admin);
 
     if ($change_all) {
-        header('Location: http://'.BASE_URL.'/admin/list_users.php');
+        header('Location: http://' . BASE_URL . '/admin/list_users.php');
     } else {
-        header('Location: http://'.BASE_URL.'/pages/register/error');
+        header('Location: http://' . BASE_URL . '/pages/register/error');
     }
 } else {
-    header('Location: http://'.BASE_URL.'/pages/register/error');
+    header('Location: http://' . BASE_URL . '/pages/register/error');
 }

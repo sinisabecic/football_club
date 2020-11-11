@@ -2,7 +2,7 @@
 
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 12.6.2020.
  * Time: 15.51
  */
@@ -30,12 +30,12 @@ class Player
     {
         $string = 'insert into fudbaler(id, ime, prezime, datum_rodjenja, pozicija, broj_dresa,tim_id) 
         values(NULL, 
-            "'.$ime.'", 
-            "'.$prezime.'", 
-            "'.$datum_rodjenja.'", 
-            "'.$pozicija.'", 
-            "'.$broj_dresa.'", 
-            (select tim.id from tim where tim.id='.$tim_id.'))';
+            "' . $ime . '", 
+            "' . $prezime . '", 
+            "' . $datum_rodjenja . '", 
+            "' . $pozicija . '", 
+            "' . $broj_dresa . '", 
+            (select tim.id from tim where tim.id=' . $tim_id . '))';
         $result = mysqli_query($this->db, $string);
 
         return $result;
@@ -67,7 +67,7 @@ class Player
 
     public function delete_player($id)
     {
-        $string = 'delete from fudbaler where id="'.$id.'"';
+        $string = 'delete from fudbaler where id="' . $id . '"';
         $result = mysqli_query($this->db, $string);
 
         return $result;

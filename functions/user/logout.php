@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 12.15
  */
@@ -14,5 +15,5 @@ session_start();
 $action = $user->logout();
 
 if ($action) {
-    header('Location: http://'.BASE_URL);
+    header('Location: http://' . BASE_URL);
 }

@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 11.02
  */
@@ -43,7 +44,7 @@ $osnovan = $team_header[0]['osnovan'];
 
 <body>
 
-    <?php require_once '../../partials/navigation.php';?>
+    <?php require_once '../../partials/navigation.php'; ?>
 
     <div class="page-holder" style="margin-top:85px">
         <div class="container">
@@ -56,24 +57,23 @@ $osnovan = $team_header[0]['osnovan'];
                 </div>
             </div>
             <div class="row">
-                <div class="well text-center radius10 animate__animated animate__zoomInUp"
-                    style="background-color:#346135">
+                <div class="well text-center radius10 animate__animated animate__zoomInUp" style="background-color:#346135">
                     <?php
-                if (sizeof($team->get_my_team())==0) {
-                    'Nemamo registrovanih igrača!';
-                } else {
-                    for ($i = 0; $i < sizeof($team->get_my_team()); $i++) {
-                        $players = $team->get_my_team();
-                        echo '<div class="col-sm-3">
+                    if (sizeof($team->get_my_team()) == 0) {
+                        'Nemamo registrovanih igrača!';
+                    } else {
+                        for ($i = 0; $i < sizeof($team->get_my_team()); $i++) {
+                            $players = $team->get_my_team();
+                            echo '<div class="col-sm-3">
             <img class="img-circle hvr-grow"
                  src="dist/img/fudbaler.svg"
                  alt="Generic placeholder image" width="140" height="140">
-            <h2 class="bijela">'.$players[$i]['ime_fudbalera'].' '.$players[$i]['prezime_fudbalera'].'</h2>
-            <p><a class="btn btn-primary" style="text-transform: uppercase" role="button">'.$players[$i]['broj_dresa'].' '.$players[$i]['pozicija_fudbalera'].'</a></p>
+            <h2 class="bijela">' . $players[$i]['ime_fudbalera'] . ' ' . $players[$i]['prezime_fudbalera'] . '</h2>
+            <p><a class="btn btn-primary" style="text-transform: uppercase" role="button">' . $players[$i]['broj_dresa'] . ' ' . $players[$i]['pozicija_fudbalera'] . '</a></p>
 </div>';
+                        }
                     }
-                }
-                ?>
+                    ?>
                     <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>

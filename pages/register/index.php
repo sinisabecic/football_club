@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 11.6.2020.
  * Time: 11.02
  */
@@ -47,16 +48,14 @@ require '../../model/UserModel.php';
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-lg-2 control-label siva2">Email</label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="inputEmail" name="email"
-                                            placeholder="Email">
+                                        <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputUsername" class="col-lg-2 control-label siva2">Korisničko
                                         ime</label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="inputEmail" name="username"
-                                            placeholder="Korisničko ime">
+                                        <input type="text" class="form-control" id="inputEmail" name="username" placeholder="Korisničko ime">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -79,7 +78,7 @@ require '../../model/UserModel.php';
         </div>
     </div>
 
-    <?php   require('../../partials/footer.php'); ?>
+    <?php require('../../partials/footer.php'); ?>
 
     <script>
         $('form').validate({

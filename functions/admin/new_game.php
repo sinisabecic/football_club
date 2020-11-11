@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 12.6.2020.
  * Time: 19.25
  */
@@ -14,11 +15,11 @@ $team = new TeamModel();
 $player = new Player();
 $game = new GameModel();
 
-if($_POST['id_kola']!='' && $_POST['domacin_id']!='' && $_POST['gost_id']!='' && $_POST['datum']!=''){
-    $datum = date('Y-m-d H:i:s',strtotime($_POST['datum']));
+if ($_POST['id_kola'] != '' && $_POST['domacin_id'] != '' && $_POST['gost_id'] != '' && $_POST['datum'] != '') {
+    $datum = date('Y-m-d H:i:s', strtotime($_POST['datum']));
     $action = $game->new_game($_POST['id_kola'], $_POST['domacin_id'], $_POST['gost_id'], $datum);
-    if($action === true){
-        header('Location: http://'.BASE_URL.'/admin/games.php');
+    if ($action === true) {
+        header('Location: http://' . BASE_URL . '/admin/games.php');
     } else {
         echo '<h1>Greska pri kreiranju nove utakmice.</h1>';
         var_dump($action);

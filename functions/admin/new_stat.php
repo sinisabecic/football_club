@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 19.6.2020.
  * Time: 00.52
  */
@@ -15,11 +16,11 @@ $team = new TeamModel();
 $player = new Player();
 $stat = new StatisticsModel();
 
-if($_POST['utakmica_id']!='' && $_POST['fudbaler_id']!='' && $_POST['br_golova']!='' && $_POST['br_asistencija']!='' && $_POST['zuti_karton']!='' && $_POST['crveni_karton']!=''){
+if ($_POST['utakmica_id'] != '' && $_POST['fudbaler_id'] != '' && $_POST['br_golova'] != '' && $_POST['br_asistencija'] != '' && $_POST['zuti_karton'] != '' && $_POST['crveni_karton'] != '') {
     $action = $stat->new_entry($_POST['utakmica_id'], $_POST['fudbaler_id'], $_POST['br_golova'], $_POST['br_asistencija'], $_POST['zuti_karton'], $_POST['crveni_karton']);
 
-    if($action){
-        header('Location: http://'.BASE_URL.'/admin/statistics.php');
+    if ($action) {
+        header('Location: http://' . BASE_URL . '/admin/statistics.php');
     } else {
         echo '<h1>Greska prilikom unosenja podataka za utakmicu i igraca.</h1>';
     }

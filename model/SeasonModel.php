@@ -2,7 +2,7 @@
 
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 12.6.2020.
  * Time: 13.57
  */
@@ -39,9 +39,9 @@ class SeasonModel
         $string = 'select prvenstvo.finished from prvenstvo order by id desc limit 1';
         $result_check = mysqli_query($this->db, $string);
         $count_check = $result_check->num_rows;
-        
+
         if ($count_check == 0 or $count_check > 0) {
-            $string1 = 'insert into prvenstvo set godina_pocetka="'.$date_start.'", godina_svrsetka="'.$date_end.'", finished=0';
+            $string1 = 'insert into prvenstvo set godina_pocetka="' . $date_start . '", godina_svrsetka="' . $date_end . '", finished=0';
             $result = mysqli_query($this->db, $string1);
 
             return $result;
@@ -58,7 +58,7 @@ class SeasonModel
      */
     public function update_season($id, $winner_id)
     {
-        $string = 'update prvenstvo set finished=1, winner='.$winner_id.' where id='.$id;
+        $string = 'update prvenstvo set finished=1, winner=' . $winner_id . ' where id=' . $id;
         $result = mysqli_query($this->db, $string);
 
         return $result;

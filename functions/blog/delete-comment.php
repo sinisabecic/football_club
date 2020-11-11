@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 19.6.2020.
  * Time: 01.30
  */
@@ -16,7 +17,7 @@ $comment_id = $_POST['comment_id'];
 if (isset($comment_id)) {
     $result = $comment->delete_comment($comment_id);
 } else {
-    $result = array('error'=>'Greška');
+    $result = array('error' => 'Greška');
 
     echo json_encode($result);
 }

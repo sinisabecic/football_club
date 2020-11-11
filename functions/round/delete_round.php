@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Created by Visual Studio Code.
- * User: nikola
+ * User: sinisa
  * Date: 19.6.2020.
  * Time: 01.30
  */
@@ -14,7 +15,7 @@ $id = $_POST['round_id'];
 $result = $round->delete_round($id);
 
 if ($result) {
-    echo json_encode(array("success"=>"Successfully deleted item"));
+    echo json_encode(array("success" => "Successfully deleted item"));
 } else {
-    echo json_encode(array("error"=>"Error deleting item"));
+    echo json_encode(array("error" => "Error deleting item"));
 }
