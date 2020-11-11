@@ -55,7 +55,7 @@ If you want, you can import script for **MongoDB** named as **mongo_fk.json**(No
 
 | **Backend**                       | **Frontend**                                | **Databases**                                       |
 | --------------------------------- | ------------------------------------------- | --------------------------------------------------- |
-| [PHP](https://php.net)            | [Bootstrap](https://getbootstrap.com/)      | [MySQL](https://www.mysql.com/)                     |
+| [PHP](https://php.net)            | [Bootswatch](https://bootswatch.com/)       | [MySQL](https://www.mysql.com/)                     |
 | [Node.js](https://nodejs.org/en/) | [JQuery](https://jquery.com)                | [MongoDB](https://www.mongodb.com/products/compass) |
 |                                   | [Ajax](https://api.jquery.com/jquery.ajax/) |
 
