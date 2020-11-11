@@ -51,7 +51,7 @@ If you want, you can import script for **MongoDB** named as **mongo_fk.json**(No
 
 > **Warning:** You need to have **_MongoDB_** installed on PC.
 
-## Technologies</span>
+## Technologies
 
 | **Backend**                       | **Frontend**                                | **Databases**                                       |
 | --------------------------------- | ------------------------------------------- | --------------------------------------------------- |
@@ -59,7 +59,7 @@ If you want, you can import script for **MongoDB** named as **mongo_fk.json**(No
 | [Node.js](https://nodejs.org/en/) | [JQuery](https://jquery.com)                | [MongoDB](https://www.mongodb.com/products/compass) |
 |                                   | [Ajax](https://api.jquery.com/jquery.ajax/) |
 
-## Author Info</span>
+## Author Info
 
 - **Facebook:** [@sinisabecicc](https://facebook.com/sinisabecicc)
 - **Twitter:** [@sinisa\_\_b](https://twitter.com/sinisa__b)
